@@ -7,4 +7,16 @@ client.once("ready", () => {
   console.log("Ready!");
 });
 
+client.on("interactionCreate", async (interaction) => {
+  if (!interaction.isCommand()) {
+    return;
+  }
+
+  const { commandName } = interaction;
+
+  if (commandName === "bing") {
+    await interaction.reply(`bong, what's up ariana grande?`);
+  }
+});
+
 client.login(token);
